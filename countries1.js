@@ -11,7 +11,7 @@ var capitalizeEntry = function(search) {
     return new Promise(function(resolve, reject) {
 
         if (search === null) {
-            throw new Error('You did not enter a country');
+            throw new Error('Sorry, your search was empty. Please enter country');
             //      code below checks to see if search query is a single non-capitalized word (like canada) 
         } else if (search.indexOf(' ') > 0 === false) {
             //          code below converts first character of text to Upper case
