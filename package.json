@@ -1,0 +1,19 @@
+{
+  "name": "countries",
+  "version": "1.0.0",
+  "description": "Node App uses fs.readFile to parse data from countries.json file and return data",
+  "main": "countries.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dacback/countries_app.git"
+  },
+  "author": "chris barriteau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dacback/countries_app/issues"
+  },
+  "homepage": "https://github.com/dacback/countries_app#readme"
+}
