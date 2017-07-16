@@ -1,5 +1,4 @@
 const fs = require('fs');
-var countries = require('./Utils/countries');
 var len = process.argv.length;
 // code below allows for coutries with two name (like united states) to be searched without quotes 
 var output = (len <= 3) ? process.argv[len - 1] : (process.argv[len - 2] + ' ' + process.argv[len - 1]);
@@ -40,13 +39,34 @@ function searchCountries(search) {
         try {
             if (!isNaN(searchData)) {
                 throw new Error('Sorry, you must enter a valid text search');
+
             }
         } catch (error) {
             console.log(error);
+
         }
 
-//      code below runs method imported via countries.js module.exports. It uses FS readFile function
-        countries.runSearch(searchData);
+        fs.readFile('countries.json', function(err, data) {
+
+            var countries = JSON.parse(data);
+            countries.forEach(function(country) {
+
+                if (searchData) {
+                    while (searchData == country['name']) {
+                        for (var key in country) {
+                            console.log(`${'Database shows '}: ${country[key]}`);
+                        }
+                        searchData = null;
+                    }
+                }
+            })
+            
+            if (err == null && isNaN(searchData)) {
+                var searchError = '';
+                searchError = new Error('Sorry, you did not enter a valid country. Try again');
+                console.log(searchError);
+            }
+        })
 
     }, function(error) {
         console.log(error);

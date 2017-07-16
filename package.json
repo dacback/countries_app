@@ -2,7 +2,7 @@
   "name": "countries",
   "version": "1.0.0",
   "description": "Node App uses fs.readFile to parse data from countries.json file and return data",
-  "main": "countries.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
